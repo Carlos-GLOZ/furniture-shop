@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
+}
+.search-filters {
+  padding: 50px 100px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 100px;
+  gap: 30px;
+}
+@media (max-width: 600px) {
+  .search-filters {
+    padding: 50px 35px;
+  }
+}
+.search-filters div {
+  display: flex;
+  flex-direction: row;
+}
+.search-filters i {
+  font-size: 25px;
+}
+.search-filters .filter-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  user-select: none;
+  margin: 0;
+}
+.search-filters .filters-left {
+  justify-content: start;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-filters .filters-left div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-filters .filters-right {
+  justify-content: end;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.search-filters .filters-right div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.text-filter-input {
+  border: 0;
+  border-radius: 0%;
+  padding: 10px 0px 10px 10px;
+  font-size: 15px;
+  box-shadow: 1px 1px 5px #d1d1d1;
+}
+.select-filter-input {
+  border: 0;
+  border-radius: 0%;
+  width: 235px;
+  padding: 10px;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  box-shadow: 1px 1px 5px #d1d1d1;
+}
+.select-filter-input:hover {
+  cursor: pointer;
+}
+.toggle-filter-input {
+  height: 40px;
+  width: 3ch;
+  margin-left: 5px;
+  background-color: white;
+  border: none;
+  border-top: solid 1px;
+  border-radius: 2px;
+  font-size: 20px;
+  transition-duration: 0.1s;
+  box-shadow: 1px 1px 5px #d1d1d1;
+}
+.toggle-filter-input i {
+  font-size: 15px;
+  user-select: none;
+}
+.toggle-filter-input:hover {
+  cursor: pointer;
+  border-bottom: solid 1px;
+  border-top: none;
+}
+@media (max-width: 900px) {
+  #filter-icon {
+    display: none;
+  }
+}
+@media (max-width: 776px) {
+  .search-filters {
+    height: auto;
+  }
+}
+@media (max-width: 440px) {
+  .filters-right {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .filters-left {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}

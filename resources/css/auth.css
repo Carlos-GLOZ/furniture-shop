@@ -1,0 +1,131 @@
+.signup-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.auth-fieldset {
+  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.31);
+}
+.auth-fieldset legend {
+  font-size: 50px;
+  margin: 0%;
+  text-decoration: none;
+  padding: 10px;
+}
+.fieldset-content {
+  width: max();
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.auth-form label {
+  font-size: 25px;
+}
+.auth-form input {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+.auth-text-input {
+  overflow: hidden;
+  width: 100%;
+  margin: 0%;
+  background: none;
+  color: black;
+  font-size: 30px;
+}
+.auth-text-input:valid {
+  color: black;
+}
+.auth-text-input:invalid {
+  color: rgba(161, 0, 0, 0.527);
+}
+.auth-field {
+  width: 100%;
+  position: relative;
+  border-bottom: solid 2px black;
+  margin-top: 40px;
+}
+.auth-field::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: green;
+  transform: scaleX(0);
+  transform-origin: 0%;
+  transition: transform 500ms ease;
+  top: 2px;
+}
+.auth-field:focus-within {
+  border-color: transparent;
+}
+.auth-field:focus-within::after {
+  transform: scaleX(1);
+}
+.auth-input-label {
+  z-index: -1;
+  position: absolute;
+  transform: translateY(-2rem);
+  transform-origin: 0%;
+  transition: transform 400ms;
+}
+.auth-field:focus-within .auth-input-label,
+.auth-text-input:not(:placeholder-shown) + .auth-input-label {
+  transform: scale(0.8) translateY(-5rem);
+}
+.auth-form-submit {
+  margin-top: 40px;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px;
+  border-width: 1px;
+  border-radius: 50px;
+  font-size: 30px;
+  background-color: black;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.31);
+  transition-duration: 0.4s;
+}
+.auth-form-submit:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.auth-form-submit:focus {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+.auth-field-error {
+  color: rgba(161, 0, 0, 0.527);
+  margin-bottom: 0;
+}
+.auth-field-error-input {
+  border-color: rgba(161, 0, 0, 0.527);
+}
+a {
+  transition-duration: 0.1s;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+}
+a b {
+  font-weight: 500;
+}
+a:hover {
+  text-decoration-color: black;
+}
+@media (max-width: 654px) {
+  .signup-wrapper {
+    min-width: 100%;
+  }
+}

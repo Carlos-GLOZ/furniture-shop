@@ -1,0 +1,277 @@
+body {
+    background-color: white;
+}
+
+.formularioproductos {
+    width: 40%;
+    margin: 0px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.formularioproductos input {
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #a1a1a1;
+}
+
+.prueba {
+    width: 80px !important;
+    height: 20px !important;
+    border: solid !important;
+    border-width: 1px !important;
+    padding: 0% !important;
+    background-color: white !important;
+    color: black !important;
+    transition-duration: 0.3s !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+    text-decoration-color: white !important;
+    margin: 3px !important;
+}
+
+.prueba:hover {
+    width: 80px !important;
+    height: 20px !important;
+    border: solid !important;
+    border-width: 1px !important;
+    padding: 0% !important;
+    background-color: black !important;
+    transition-duration: 0.3s !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    color: white !important;
+    text-decoration: underline !important;
+    text-decoration-color: white !important;
+}
+
+.formularioproductos textarea {
+    width: 80%;
+    height: 100px;
+    margin: 0px;
+    max-height: 100px;
+    max-width: 80%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.cajaproductos {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 45px 20px;
+    justify-content: center;
+    gap: 40px;
+}
+
+#img {
+    border: none;
+}
+
+.product-img {
+    /* width: 60px !important;
+    height: 40px !important; */
+    max-width: 150px!important;
+}
+
+#registrar {
+    width: 50%;
+    background-color: #FFF7E3;
+    border: 1px solid black;
+}
+
+#registrar:hover {
+    width: 50%;
+    background-color: rgb(51, 130, 94);
+    border: 1px solid black;
+    color: white;
+    transition: 0.5s;
+}
+
+#reiniciar {
+    width: 50%;
+    background-color: #FFF7E3;
+    border: 1px solid black;
+}
+
+#reiniciar:hover {
+    width: 50%;
+    background-color: rgb(158, 47, 47);
+    border: 1px solid black;
+    color: white;
+    transition: 0.5s;
+}
+
+#precio {
+    width: 25%;
+}
+
+.btn-danger {
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid rgb(158, 47, 47);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.btn-success {
+    padding: 10px;
+    font-size: 12px;
+    border: 1px solid rgb(51, 130, 94);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.btn-danger:hover {
+    background-color: rgb(158, 47, 47);
+    transition: 0.5s;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: rgb(51, 130, 94);
+    transition: 0.5s;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-radius: 5px;
+    margin-right: 50px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: scroll !important;
+    text-align: center;
+}
+
+.titulo {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px 0px 0px;
+}
+
+.titulo h1 {
+    margin: 0px;
+}
+
+table tr {
+    /* display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between; */
+    margin: 10px 0px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.linea {
+    border-top: 1px solid black;
+    padding: 10px 0px;
+}
+
+.imagenmueble {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media (max-width: 940px) {
+    .cajaproductos {
+        display: flex;
+        flex-direction: column;
+        margin: 40px 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .formularioproductos {
+        margin: 0px 20px 50px;
+    }
+    table {
+        width: 100%;
+        border-radius: 5px;
+        margin: 0;
+        padding: 10px;
+        background-color: #f1f1f1;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        overflow: scroll !important;
+    }
+    .caja {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .formularioproductos {
+        width: 80%;
+        margin: 0px;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: 0px 20px 50px;
+    }
+    thead tr {
+        font-size: 10px;
+    }
+    .linea {
+        font-size: 10px;
+    }
+    .imagenmueble {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        object-fit: cover;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    .btn-success {
+        padding: 9px;
+        font-size: 10px;
+        border: 1px solid rgb(51, 130, 94);
+        background-color: white;
+        border-radius: 5px;
+    }
+    .btn-danger {
+        padding: 9px;
+        font-size: 10px;
+        border: 1px solid rgb(158, 47, 47);
+        background-color: white;
+        border-radius: 5px;
+    }
+    .titulo h1 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn-danger {
+        padding: 5px;
+        font-size: 7px;
+        border: 1px solid rgb(158, 47, 47);
+        background-color: white;
+        border-radius: 5px;
+    }
+    .btn-success {
+        padding: 5px;
+        font-size: 7px;
+        border: 1px solid rgb(51, 130, 94);
+        background-color: white;
+        border-radius: 5px;
+    }
+    thead tr {
+        font-size: 8px;
+    }
+    .titulo h1 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,59 @@
+.caja{
+    position: relative;
+    max-width: 100%;
+    padding: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    form{
+        width: 50%;
+        @media(max-width: 600px){
+            width: 100%;
+        }
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        background: rgba(149, 149, 149, 0.31);
+        padding: 30px;
+        border-radius: 20px;
+        .divs{
+            width: 100%;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+        h1{
+            margin: 0;
+            width: fit-content;
+        }
+        #destinatario, #asunto, #mensaje{
+            width: 70%;
+            padding: 10px;
+            border: 1px solid black;
+            &:focus-visible{
+                outline: 0;
+            }
+            
+        }
+    }
+    #listarbuscador{
+        width: 68%;
+        position: absolute;
+        top: 226px;
+        background-color: #d3e5ff;
+        border: 1px solid black;
+        flex-direction: column;
+        p{
+            margin: 0;
+            padding: 10px;
+            transition: 0.4s ease;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.4;
+            }
+        }
+    }
+}
