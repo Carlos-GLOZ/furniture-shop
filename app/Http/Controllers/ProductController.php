@@ -93,7 +93,7 @@ class ProductController extends Controller
         $id = $request->input('id');
 
         // $imagePath = storage_path('app\public\images\products\prod_'. $id.'.png');
-        $imagePath = asset('storage/images/products/prod_'. $id.'.png');
+        $imagePath = public_path().'/storage/images/products/prod_'. $id.'.png';
 
         
         if (file_exists($imagePath)) {
