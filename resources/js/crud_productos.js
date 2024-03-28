@@ -231,6 +231,43 @@ productImageInput.addEventListener('input', (e) => {
     reader.readAsDataURL(temporaryProductImage);
 });
 
+// Avoid non-number characters in price input
+const priceInput = document.getElementById('price-input');
+
+priceInput.addEventListener('input', (e) => {
+    const rawValue = priceInput.value;
+    const testRegex = /[^0-9.]/;
+
+    // Check if string is valid
+    const isNotValid = testRegex.test(rawValue); // Will return true if the string contains anything other than a number and the character "."
+
+    console.log({'isNotValid' : isNotValid});
+
+    if (isNotValid) {
+        const rawValueList = priceInput.value.split('');
+        const proccessedValueList = [];
+
+        for (let i = 0; i < rawValueList.length; i++) {
+            const character = rawValueList[i];
+            const charTestRegex = /[0-9.]/;
+
+            console.log({
+                'char' : character,
+                'search' : charTestRegex.test(character),
+            });
+            
+            if (charTestRegex.test(character)) {
+                proccessedValueList.push(character);
+            }
+        }
+
+        const proccessedValue = proccessedValueList.join('');
+
+        priceInput.value = proccessedValue;
+    }
+
+});
+
 // Try to show table, will fail if on editing page
 try {
     toggleTableButton.addEventListener('click', (e) => {
