@@ -24,12 +24,12 @@
                                 <form action="{{ route('product.pay') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="items[]" value="{{ $item->product->id }}">
-                                    <button class="standard-button">Purchase</button>
+                                    <button class="standard-button">Comprar</button>
                                 </form>
                                 <form action="{{ route('cart.destroy', $item->product) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="standard-button-dark">Remove</button>
+                                    <button type="submit" class="standard-button-dark">Quitar</button>
                                 </form>
                             </div>
                         </div>
@@ -52,14 +52,14 @@
                         @foreach ($items as $item)
                             <input type="hidden" name="items[]" value="{{ $item->product->id }}">
                         @endforeach
-                        <button class="standard-button">Purchase</button>
+                        <button class="standard-button">Comprar</button>
                     </form>
                 </div>
             </div>
         @else
             <div id="empty-message">
-                <p>Nothing in shopping cart</p>
-                <button class="standard-button-dark"><a href="{{ route('home') }}">Shop</a></button>
+                <p>Carrito vacío</p>
+                <button class="standard-button-dark"><a href="{{ route('home') }}">Explorar</a></button>
             </div>
         @endif
     </div>

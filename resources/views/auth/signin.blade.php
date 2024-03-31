@@ -6,11 +6,11 @@
         <div class="center-column signup-wrapper">
             <fieldset class="auth-fieldset">
 
-                <legend>Sign In</legend>
+                <legend>Entra</legend>
           
                 <div class="fieldset-content">
 
-                    <p style="margin-bottom: 0">or <a href="{{ route('auth.signup') }}"><b>Register</b></a></p>
+                    <p style="margin-bottom: 0">o <a href="{{ route('auth.signup') }}"><b>Regístrate</b></a></p>
 
                     @if (session('status'))
                         <p class="auth-field-error">{{ session('status') }}</p>
@@ -24,10 +24,10 @@
                         </div>
                         <div class="auth-field @error('password') auth-field-error-input @enderror">
                             <input type="password" name="password" class="auth-text-input" placeholder=" ">
-                            <label for="password" class="auth-input-label">Password</label>
+                            <label for="password" class="auth-input-label">Contraseña</label>
                         </div>
                         
-                        <button type="submit" class="auth-form-submit">Log In</button>
+                        <button type="submit" class="auth-form-submit">Entrar</button>
                     </form>
                 </div>
               </fieldset>

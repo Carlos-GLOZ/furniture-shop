@@ -5,24 +5,24 @@
 
 <div class="caja">
     <form action="{{ url('/FuncionMail') }}" method="post">
-        <h1>EMAIL FORM</h1>
+        <h1>FORMULÁRIO DE CORREO</h1>
         <div class="divs">
-            <input type="button" class="standard-button" id="todos" value="All">
-            <input type="button" class="standard-button" id="escoger" value="Choose">
+            <input type="button" class="standard-button" id="todos" value="Todos">
+            <input type="button" class="standard-button" id="escoger" value="Escoger">
         </div>
     
         @csrf
         {{-- <input type="text" id="destinatario" name="Destinatario" placeholder="Destinatario"> --}}
 
-        <input class="correos" id="destinatario" name="Destinatario" placeholder="Addressee">
+        <input class="correos" id="destinatario" name="Destinatario" placeholder="Recipiente(s)">
         <div style="display: none;" id="listarbuscador" name="listarbuscador" ></div> {{-- BUSCADOR USUARIOS --}}
 
-        <input type="text" id="asunto" name="Asunto" placeholder="Affair" >
+        <input type="text" id="asunto" name="Asunto" placeholder="Asunto" >
 
-        <textarea name="" id="mensaje" name="Mensaje" placeholder="Message"></textarea>
+        <textarea name="" id="mensaje" name="Mensaje" placeholder="Mensaje"></textarea>
 
-        <input style="width: 207px;" type="submit" value="Send email" id="enviar" class="enviar standard-button-dark">
-        <input type="reset" id="reiniciar" value="Reset" class="standard-button">
+        <input style="width: 207px;" type="submit" value="Enviar correo" id="enviar" class="enviar standard-button-dark">
+        <input type="reset" id="reiniciar" value="Reestablecer" class="standard-button">
     </form>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

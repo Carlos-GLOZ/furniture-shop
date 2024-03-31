@@ -8,21 +8,21 @@
         {{-- Filter Icon --}}
         <div id="filter-icon">
             <i class="fa-solid fa-sliders"></i>
-            <p class="filter-text">Filter</p>
+            <p class="filter-text">Filtros</p>
         </div>
         <!-- Filter -->
-        <p class="filter-text">Name</p>
+        <p class="filter-text">Nombre</p>
         <div>
             <input type="text" class="text-filter-input filter-name" placeholder="Search...">
         </div>
     </div>
     <div class="filters-right" class="filters-button-container">
         <!-- Filter -->
-        <p class="filter-text">Order</p>
+        <p class="filter-text">Orden</p>
         <div>
             <select type="text" class="select-filter-input filter-order-column" placeholder="Search...">
-                <option value="name" selected>Name</option>
-                <option value="price">Price</option>
+                <option value="name" selected>Nombre</option>
+                <option value="price">Precio</option>
             </select>
             <button value="ASC" class="toggle-filter-input filter-order-direction"><i class="fa-solid fa-chevron-up"></i></button>
         </div>

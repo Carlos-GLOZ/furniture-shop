@@ -30,9 +30,9 @@
                                 <p id="product-price"><input type="text" id="price-input" name="price" placeholder="Price" value="{{ $product->price }}">€</p>
                             </div>
                             <div id="product-buttons">
-                                <button type="submit" id="submit-form-button" class="standard-button">Save</button>
-                                <button type="reset" id="reset-form-button" class="standard-button-dark">Clear</button>
-                                <button class="standard-button"><a href="{{ route('product.find', $product->id) }}">Product page</a></button>
+                                <button type="submit" id="submit-form-button" class="standard-button">Guardar</button>
+                                <button type="reset" id="reset-form-button" class="standard-button-dark">Reestablecer</button>
+                                <button class="standard-button"><a href="{{ route('product.find', $product->id) }}">Ver producto</a></button>
                             </div>
                         </div>
                     </div>
@@ -66,8 +66,8 @@
                                 <p id="product-price"><input type="text" id="price-input" name="price" placeholder="Price">€</p>
                             </div>
                             <div id="product-buttons">
-                                <button type="submit" id="submit-form-button" class="standard-button">Create</button>
-                                <button type="reset" id="reset-form-button" class="standard-button-dark">Reset</button>
+                                <button type="submit" id="submit-form-button" class="standard-button">Crear</button>
+                                <button type="reset" id="reset-form-button" class="standard-button-dark">Reestablecer</button>
                             </div>
                         </div>
                     </div>

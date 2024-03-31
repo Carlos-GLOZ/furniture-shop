@@ -24,13 +24,13 @@
                             @can('cart', $product)
                             <form action="{{ route('cart.store', $product) }}" method="post">
                                 @csrf
-                                <button type="submit" class="standard-button add-to-cart-button">Add to cart</button>
+                                <button type="submit" class="standard-button add-to-cart-button" style="font-size: medium;">Añadir a carrito</button>
                             </form>
                             @else
                                 <form action="{{ route('cart.destroy', $product) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="standard-button-dark add-to-cart-button">Uncart</button>
+                                    <button type="submit" class="standard-button-dark add-to-cart-button" style="font-size: medium;">Quitar de carrito</button>
                                 </form>
                             @endcan
 
@@ -39,18 +39,18 @@
                                 <form action="{{ route('product.edit') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $product->id }}">
-                                    <button type="submit" class="standard-button add-to-cart-button">Edit</button>
+                                    <button type="submit" class="standard-button add-to-cart-button">Editar</button>
                                 </form>
                                 <form action="{{ route('product.destroy') }}" method="post" id="product-destroy-form" data-redirect="{{ route('home') }}">
                                     @csrf
                                     @method('DELETE')
                                     <input type="hidden" name="id", value="{{ $product->id }}">
-                                    <button type="submit" class="standard-button-dark add-to-cart-button">Delete</button>
+                                    <button type="submit" class="standard-button-dark add-to-cart-button">Eliminar</button>
                                 </form>
                             @endcan
                         @endauth
                         @guest
-                            <button class="standard-button add-to-cart-button"><a href="{{ route('auth.signin') }}">Add to cart</a></button>
+                            <button class="standard-button add-to-cart-button"><a href="{{ route('auth.signin') }}" style="font-size: medium;">Añadir a carrito</a></button>
                         @endguest
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                             <p class="review-username">{{ auth()->user()->name }}</p>
                             <input type="hidden" name="comment" id="review-form-comment-input">
                             <p class="review-comment"><div contenteditable="true" type="text" name="comment" id="review-form-comment" class="@error('comment')review-comment-invalid @enderror"></div></p>
-                            <button type="submit" class="standard-button">Review</button>
+                            <button type="submit" class="standard-button">Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -101,7 +101,7 @@
                                 <form action="{{ route('review.destroy', $review) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="standard-button-dark">Delete</button>
+                                    <button type="submit" class="standard-button-dark">Eliminar</button>
                                 </form>
                             @endcan
                         </div>

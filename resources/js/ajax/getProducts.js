@@ -28,9 +28,9 @@ function getProducts(name = '', order_column = 'name', order_direction = 'ASC') 
             // Update counter
             const counter = document.getElementsByClassName('showcase-message')[0].getElementsByClassName('message')[0];
 
-            let counter_text = "Showing " + products.length + " result"
+            let counter_text = "Mostrando " + products.length + " resultado"
             if (products.length == 0) {
-                counter_text = 'No results found';
+                counter_text = 'Ningún resultado encontrado';
             } else if (products.length !== 1) {
                 counter_text += 's';
             }

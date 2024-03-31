@@ -11,7 +11,7 @@
 <div id="tag-list"></div> <!-- ANCHOR TAG: LISTADO -->
 
 <div class="showcase-message">
-    <p class="message">Showing 0 results</p>
+    <p class="message">Mostrando 0 resultados</p>
 </div>
 
 {{-- 1519.2px W --}}

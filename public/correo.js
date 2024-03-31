@@ -95,7 +95,7 @@ function ponerValueEnBuscador(evt) {
 
 todos.addEventListener("click", () => {
 
-    destinatario.value = "All the users";
+    destinatario.value = "Todos los usuarios";
     destinatario.disabled = true;
     listarbuscador.style.display = 'none';
 
