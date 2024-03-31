@@ -13,7 +13,22 @@ function buildProductCard(product) {
     // Create image
     let image = document.createElement('img');
     image.classList.add('product-image');
-    image.src = product.image;
+
+    // check if image exists
+    const ajax = new XMLHttpRequest();
+
+    ajax.open('GET', product.image);
+
+    ajax.onload = (e) => {
+        if (ajax.status === 200) {
+            image.src = product.image;
+        } else {
+            image.src = defaultProductImage;
+        }
+    };
+
+    ajax.send();
+
 
     // Create name
     let name = document.createElement('p');

@@ -10,7 +10,7 @@
     <div id="product-main">
         <div id="product-column">
             <div id="product-wrapper">
-                <img id="product-image" src="{{ asset('storage/images/products/prod_'.$product->id.'.png') }}" alt="product">
+                <img id="product-image" src="{{ $product->image }}" alt="product">
                 <div id="product-info-wrapper">
                     <div id="product-info">
                         <div>
@@ -22,10 +22,10 @@
                     <div id="product-buttons">
                         @auth
                             @can('cart', $product)
-                            <form action="{{ route('cart.store', $product) }}" method="post">
-                                @csrf
-                                <button type="submit" class="standard-button add-to-cart-button" style="font-size: medium;">Añadir a carrito</button>
-                            </form>
+                                <form action="{{ route('cart.store', $product) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="standard-button add-to-cart-button" style="font-size: medium;">Añadir a carrito</button>
+                                </form>
                             @else
                                 <form action="{{ route('cart.destroy', $product) }}" method="post">
                                     @csrf

@@ -36,6 +36,8 @@
         @auth
             authed = true;
         @endauth
+
+        const defaultProductImage = "{{ asset('storage/images/products/default.png') }}";
     </script>
     
     @yield('content')

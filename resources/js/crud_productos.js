@@ -124,8 +124,6 @@ function submitProductForm() {
         if (ajax.status == 200) {
             AJAXResponse = JSON.parse(ajax.responseText);
 
-            console.log(AJAXResponse);
-
             Swal.fire({
                 icon: AJAXResponse.icon,
                 title: AJAXResponse.message,

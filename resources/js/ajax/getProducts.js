@@ -1,4 +1,4 @@
-function getProducts(name = '', order_column = 'name', order_direction = 'ASC') {
+async function getProducts(name = '', order_column = 'name', order_direction = 'ASC') {
 
     // Append filters to the end of path 
     let formData = new FormData();
@@ -22,7 +22,7 @@ function getProducts(name = '', order_column = 'name', order_direction = 'ASC') 
 
             for (let i = 0; i < products.length; i++) {
                 // Append built card to product section
-                showcase.appendChild(buildProductCard(products[i]));
+                addProductToShowcase(showcase, products[i])
             }
 
             // Update counter
@@ -47,6 +47,11 @@ function filterProducts() {
     let order_direction = document.getElementById('main-search-filters').getElementsByClassName('filter-order-direction')[0];
 
     getProducts(name.value, order_column.value, order_direction.value);
+}
+
+async function addProductToShowcase(showcase, product) {
+    const productCard = await buildProductCard(product)
+    showcase.appendChild(productCard);
 }
 
 window.onload = (e) => {

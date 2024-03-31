@@ -33,7 +33,14 @@ class ProductController extends Controller
         $products = Product::where('name', 'LIKE', '%'.$name_filter.'%')->orderBy($order_column_filter, $order_direction_filter)->paginate(20);
 
         foreach ($products as $product) {
-            $product->image = asset('storage/images/products/prod_'.$product->id.'.png');
+
+            $imagePath = public_path().'/storage/images/products/prod_'. $product->id.'.png';
+    
+            if (file_exists($imagePath)) {
+                $product->image = asset('storage/images/products/prod_'.$product->id.'.png');
+            } else {
+                $product->image = asset('storage/images/products/default.png');
+            }
         }
 
         return $products;
@@ -47,6 +54,14 @@ class ProductController extends Controller
         $product = Product::with(['reviews' => function ($query) {
             $query->orderBy('created_at', 'desc');
         }, 'reviews.author'])->find($productId);
+
+        $imagePath = public_path().'/storage/images/products/prod_'. $product->id.'.png';
+
+        if (file_exists($imagePath)) {
+            $product->image = asset('storage/images/products/prod_'.$product->id.'.png');
+        } else {
+            $product->image = asset('storage/images/products/default.png');
+        }
 
         return view('product.view', compact(['product']));
     }
@@ -71,7 +86,7 @@ class ProductController extends Controller
     {
         // Validate that user is logged in and an admin
         if (!Auth::check() || auth()->user()->admin != 1) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
 
         $products=Product::get();
@@ -87,7 +102,7 @@ class ProductController extends Controller
 
         // Validate that user is logged in and an admin
         if (!Auth::check() || auth()->user()->admin != 1) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
 
         $id = $request->input('id');
@@ -117,7 +132,7 @@ class ProductController extends Controller
     {
         // Validate that user is logged in and an admin
         if (!Auth::check() || auth()->user()->admin != 1) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
 
         $product = $request->except('_token', 'img');
@@ -161,12 +176,22 @@ class ProductController extends Controller
     {
         // Validate that user is logged in and an admin
         if (!Auth::check() || auth()->user()->admin != 1) {
-            return redirect()->route('home')->with(['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error']);
+            return redirect()->route('home')->with(['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error']);
         }
 
         $id = $request->input('id');
+        
+        $product = Product::with(['reviews' => function ($query) {
+            $query->orderBy('created_at', 'desc');
+        }, 'reviews.author'])->find($id);
 
-        $product = Product::find($id);
+        $imagePath = public_path().'/storage/images/products/prod_'. $product->id.'.png';
+
+        if (file_exists($imagePath)) {
+            $product->image = asset('storage/images/products/prod_'.$product->id.'.png');
+        } else {
+            $product->image = asset('storage/images/products/default.png');
+        }
 
         return view('product.create', compact(['product']));
     }
@@ -179,7 +204,7 @@ class ProductController extends Controller
 
         // Validate that user is logged in and an admin
         if (!Auth::check() || auth()->user()->admin != 1) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
         
         // Use Validator class to avoid automatic response by laravel
@@ -221,10 +246,10 @@ class ProductController extends Controller
             
             $product->update($product_data);
         } catch (\Throwable $th) {
-            return ['status' => 'OK', 'message' => $th->getMessage(), 'icon' => 'error'];
+            return ['status' => 'OK', 'message' => 'Ha habido un error actualizando el producto', 'icon' => 'error'];
         }
     
-        return ['status' => 'OK', 'message' => 'Product updated successfully', 'icon' => 'success'];
+        return ['status' => 'OK', 'message' => 'Producto actualizado', 'icon' => 'success'];
     }
 
 
@@ -235,7 +260,7 @@ class ProductController extends Controller
 
         // Validate that user is logged in
         if (!Auth::check()) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
 
         // Validate items sent and add up price
@@ -246,7 +271,7 @@ class ProductController extends Controller
             $product = Product::find($id);
 
             if (!$product) {
-                return back()->with('status', 'Product not found');
+                return back()->with('status', 'Producto no encontrado');
             }
 
             $precio += $product->price;
@@ -316,7 +341,7 @@ class ProductController extends Controller
     {
         // Validate that user is logged in
         if (!Auth::check()) {
-            return ['status' => 'NOT OK', 'message' => 'Unauthorized access', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Acceso no autorizado', 'icon' => 'error'];
         }
 
         $ids=explode(',',$request->input('ids'));
