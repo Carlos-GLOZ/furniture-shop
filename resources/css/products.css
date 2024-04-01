@@ -16,7 +16,7 @@ html {
   justify-content: center;
 }
 .showcase-message {
-  padding: 0px 100px;
+  padding: 0px 0px 10px 100px;
   display: flex;
   align-items: center;
 }
@@ -44,8 +44,9 @@ html {
   align-items: center;
   max-height: 270px;
   justify-content: center;
+  margin-bottom: 20px;
 }
-.product-card .product-image-container .product-image {
+.product-card .product-image {
   max-width: 100%;
   max-height: 270px;
 }
