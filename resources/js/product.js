@@ -40,10 +40,19 @@ function buildProductCard(product) {
     price.classList.add('product-price');
     price.innerText = product.price + "€";
 
+    // Create image container
+    let imageContainer = document.createElement('div');
+    imageContainer.classList.add('product-image-container');
+
+    // Create text container
+    let textContainer = document.createElement('div');
+
     // Add elements to card
-    card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(price);
+    imageContainer.appendChild(image);
+    textContainer.appendChild(name);
+    textContainer.appendChild(price);
+    card.appendChild(imageContainer);
+    card.appendChild(textContainer);
 
     return card;
 }
