@@ -155,7 +155,7 @@ class ProductController extends Controller
 
 
         if ($filetype != 'png' && $filetype != 'jpg' && $filetype != 'jpeg') {
-            return ['status' => 'NOT OK', 'message' => 'Invalid File Type', 'icon' => 'error'];
+            return ['status' => 'NOT OK', 'message' => 'Tipo de archivo inválido', 'icon' => 'error'];
         }
 
         try {
@@ -163,7 +163,7 @@ class ProductController extends Controller
 
             $request->file('img')->move(public_path('storage/images/products'), 'prod_'.$id.'.png');
             
-            return ['status' => 'OK', 'message' => 'Product created successfully', 'icon' => 'success'];
+            return ['status' => 'OK', 'message' => 'Producto creado exitosamente', 'icon' => 'success'];
         } catch (\Throwable $th) {
             return ['status' => 'NOT OK', 'message' => $th->getMessage(), 'icon' => 'error'];
         }
