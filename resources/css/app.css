@@ -3,35 +3,35 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw-.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Uw-.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCvr70w-.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrFJA.ttf) format('truetype');
 }
 * {
   font-family: 'Montserrat', sans-serif;
@@ -133,6 +133,32 @@ a:hover {
 .standard-button-dark:hover a {
   color: black;
 }
+.disabled-button {
+  width: 159px;
+  height: 48px;
+  border: solid;
+  border-width: 1px;
+  padding: 0%;
+  background-color: #dddddd;
+  transition-duration: 0.3s;
+  font-size: 20px;
+  font-weight: 500;
+}
+.disabled-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-weight: 500;
+}
+.disabled-button:hover {
+  cursor: not-allowed;
+}
+.disabled-button:hover a {
+  color: whitesmoke;
+}
 .center-column-wrapper {
   width: 100vw;
   height: 100vh;
@@ -144,7 +170,6 @@ a:hover {
   width: 33%;
   min-width: 600px;
 }
-<<<<<<< HEAD
 .large-button {
   height: 48px;
   border: solid;
@@ -214,140 +239,4 @@ a:hover {
 }
 .large-button-dark:hover a {
   color: black;
-=======
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
-}
-
-/*:::::::::::::::.*/
-/*:::::::::::::::.*/
-/*:::::::::::::::.*/
-#todos{
-  width: 100px;
-}
-#todos:hover{
-  background-color: black;
-  transition: 0.3s;
-  color: white;
-}
-.formmail textarea {
-  width: 400px;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  border: none;
-  border: 1px solid rgb(63, 63, 63);
-}
-a {
-  color: black;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  transition-duration: 0.3s;
-}
-
-a:hover {
-  text-decoration-color: black;
-}
-
-.center-column-wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-}
-
-.center-column {
-  height: 100%;
-  width: 33%;
-  min-width: 600px;
-}
-.caja {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-}
-.formmail {
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  height: 50%;
-  justify-content: center;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.formmail input {
-  width: 400px;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  border: none;
-  border: 1px solid rgb(63, 63, 63);;
-}
-
-#enviar {
-  width: 80%;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  border: none;
-  background-color:  #e9e6df;
-
-}
-#enviar:hover{
-  background-color:  #afc6ad;
-  transition: 0.2s;
-}
-#reiniciar{
-  width: 80%;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-bottom: 10px;
-  border: none;
-  background-color:  #e9e6df;
-}
-#reiniciar:hover{
-  background-color:  #c0a1a1;
-  transition: 0.2s;
-}
-
-
-#mensaje {
-  width: 400px;
-  height: 15vh;
-  text-align: start;
-  margin: 0 0 10px 0;
-  border-radius: 5px;
-  padding: 10px;
-  max-width: 400px;
-  max-height: 30vh;
-}
-
-@media (max-width: 530px) {
-  .formmail input {
-      width: 300px;
-  }
-  #mensaje {
-      width: 300px;
-  }
->>>>>>> 710cdfc1220c8d0be950d3e5261d3f76a539def6
 }

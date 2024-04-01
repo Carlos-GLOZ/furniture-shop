@@ -21,10 +21,11 @@
                                 <p class="cart-item-price">{{ $item->product->price }}€</p>
                             </div>
                             <div class="cart-item-button-section">
-                                <form action="{{ route('product.pay') }}" method="post">
+                                {{-- <form action="{{ route('product.pay') }}" method="post"> --}}
+                                <form action="" method="post">
                                     @csrf
                                     <input type="hidden" name="items[]" value="{{ $item->product->id }}">
-                                    <button class="standard-button">Comprar</button>
+                                    <button class="disabled-button" disabled>Comprar</button>
                                 </form>
                                 <form action="{{ route('cart.destroy', $item->product) }}" method="post">
                                     @csrf
@@ -47,12 +48,13 @@
                     <p id="total-price">{{ number_format($items->sum('product.price'),2) }}€</p>
                 </div>
                 <div>
-                    <form action="{{ route('product.pay') }}" method="post">
+                    {{-- <form action="{{ route('product.pay') }}" method="post"> --}}
+                    <form action="" method="post">
                         @csrf
                         @foreach ($items as $item)
                             <input type="hidden" name="items[]" value="{{ $item->product->id }}">
                         @endforeach
-                        <button class="standard-button">Comprar</button>
+                        <button class="disabled-button" disabled>Comprar</button>
                     </form>
                 </div>
             </div>
