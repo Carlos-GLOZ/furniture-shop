@@ -16,9 +16,19 @@ class DatabaseSeeder extends Seeder
     {
         Product::insert([
             [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
+                'name' => 'Armario',
+                'description' => 'Espacioso armario empotrado',
+                'price' => 225.50
+            ],
+            [
+                'name' => 'Escritorio',
+                'description' => 'Sencillo escritorio con espacio para almacenamiento de sobra',
+                'price' => 85.00
+            ],
+            [
+                'name' => 'Silla de escritorio',
+                'description' => 'Cómoda silla de escritorio',
+                'price' => 45.00
             ],
             [
                 'name' => 'Sillón',
@@ -26,34 +36,9 @@ class DatabaseSeeder extends Seeder
                 'price' => 123.45
             ],
             [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
-            ],
-            [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
-            ],
-            [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
-            ],
-            [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
-            ],
-            [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
-            ],
-            [
-                'name' => 'Sillón',
-                'description' => 'Un cómodo sillón',
-                'price' => 123.45
+                'name' => 'Sofá',
+                'description' => 'Sofá de cuero artificial negro',
+                'price' => 336.68
             ],
         ]);
     }
