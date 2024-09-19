@@ -12,6 +12,10 @@
 
                     <p style="margin-bottom: 0">or <a href="{{ route('auth.signin') }}"><b>Entra</b></a> si ya tienes cuenta</p>
 
+                    @error('email')
+                        <p class="auth-field-error">Ya hay un usuario registrado con ese e-mail</p>
+                    @enderror
+
                     <form action="{{ route('auth.signup') }}" method="post" class="auth-form">
                         @csrf
                         <div class="auth-field @error('name') auth-field-error-input @enderror">
