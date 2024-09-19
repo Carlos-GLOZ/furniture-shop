@@ -13,7 +13,7 @@
                     <p style="margin-bottom: 0">or <a href="{{ route('auth.signin') }}"><b>Entra</b></a> si ya tienes cuenta</p>
 
                     @error('email')
-                        <p class="auth-field-error">Ya hay un usuario registrado con ese e-mail</p>
+                        <p class="auth-field-error">Campos inválidos. Compruebe que ha escrito todo correctamente y que el correo introducido no ha sido registrado previamente.</p>
                     @enderror
 
                     <form action="{{ route('auth.signup') }}" method="post" class="auth-form">
